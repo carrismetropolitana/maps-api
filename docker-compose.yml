@@ -1,5 +1,12 @@
 version: '3'
 
+volumes:
+  certbotdata:
+
+networks:
+  backend-network:
+    driver: bridge
+
 services:
   nginx:
     image: nginx:stable
@@ -31,15 +38,12 @@ services:
     image: ghcr.io/onthegomap/planetiler:latest
     volumes:
       - './data:/data'
-    environment:
-      - JAVA_TOOL_OPTIONS=-Xmx1g
-    command: --download --area=lisbon
+    command: --only-download --force --area=portugal --output=portugal.pmtiles
 
-  tileserver-gl:
-    image: maptiler/tileserver-gl
+  tileserver:
+    build: ./tileserver
+    restart: unless-stopped
     volumes:
       - './data:/data'
-    command: '-p 6262'
-    stdin_open: true
-    tty: true
-    restart: unless-stopped
+    networks:
+      - backend-network

@@ -37,13 +37,13 @@ services:
   planetiler:
     image: ghcr.io/onthegomap/planetiler:latest
     volumes:
-      - './data:/data'
-    command: --only-download --force --area=portugal --output=portugal.pmtiles
+      - './tileserver:/data'
+    command: --force --download --area=portugal
 
   tileserver:
-    build: ./tileserver
+    image: maptiler/tileserver-gl
     restart: unless-stopped
     volumes:
-      - './data:/data'
+      - './tileserver:/data'
     networks:
       - backend-network

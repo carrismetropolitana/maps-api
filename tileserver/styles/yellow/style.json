@@ -1,7 +1,7 @@
 {
     "version": 8,
-    "name": "Carris Metropolitana Yellow",
     "id": "carrismetropolitana-yellow",
+    "name": "Carris Metropolitana Yellow",
     "metadata": {
         "maputnik:license": "https://github.com/carrismetropolitana/mapas/LICENSE.md",
         "maputnik:renderer": "mbgljs",

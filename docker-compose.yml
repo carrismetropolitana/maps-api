@@ -37,7 +37,9 @@ services:
   planetiler:
     image: ghcr.io/onthegomap/planetiler:latest
     volumes:
-      - './tileserver:/data'
+      - './tileserver:/output'
+    # entrypoint: 'rm -rf /data/output.mbtiles data/tmp && ./quickstart.sh monaco --docker'
+    # entrypoint: 'java -jar planetiler.jar --download --area=portugal'
     command: --force --download --area=portugal --fetch-wikidata
 
   tileserver:

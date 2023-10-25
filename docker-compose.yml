@@ -38,7 +38,7 @@ services:
     image: ghcr.io/onthegomap/planetiler:latest
     volumes:
       - './tileserver:/output'
-    command: --force --download --osm_url=https://download.geofabrik.de/europe/portugal-latest.osm.pbf --fetch-wikidata --free_osm_after_read
+    command: --force --download --osm_url=https://download.geofabrik.de/europe/portugal-latest.osm.pbf --fetch-wikidata --free_osm_after_read --output=/output/output.mbtiles
 
   tileserver:
     image: maptiler/tileserver-gl

@@ -13,7 +13,7 @@
         -9.0
     ],
     "zoom": 10,
-    "sprite": "light.png",
+    "sprite": "light",
     "glyphs": "{fontstack}/{range}.pbf",
     "layers": [
         {

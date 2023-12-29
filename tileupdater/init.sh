@@ -17,7 +17,7 @@ while true; do
     yesterday_date_string=$(date -d "yesterday 13:00" '+%Y%m%d')
 
     # Extract Portugal from the larger dataset
-    ./pmtiles extract https://build.protomaps.com/$yesterday_date_string.pmtiles /data/next.pmtiles --bbox=-$portugal_bbox
+    ./pmtiles extract https://build.protomaps.com/$yesterday_date_string.pmtiles /data/next.pmtiles --bbox=$portugal_bbox
 
     # Remove the previous archive and replace with the new one
     rm /data/latest.pmtiles

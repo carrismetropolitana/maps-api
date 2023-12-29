@@ -2,7 +2,6 @@ version: '3.9'
 
 volumes:
   certbotdata:
-  tileserverdata:
 
 services:
   #
@@ -67,7 +66,7 @@ services:
     image: maptiler/tileserver-gl
     restart: unless-stopped
     volumes:
-      - 'tileserverdata:/data'
+      - './tileserverdata:/data'
 
   # # # # # # # # # # # # # # # # # # # # #
   # # # # # # # # # # # # # # # # # # # # #
@@ -76,4 +75,4 @@ services:
     image: ghcr.io/carrismetropolitana/maps-tileupdater:production
     restart: unless-stopped
     volumes:
-      - 'tileserverdata:/data'
+      - './tileserverdata:/data'

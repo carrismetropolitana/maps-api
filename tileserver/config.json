@@ -1,26 +1,36 @@
 {
     "options": {
         "paths": {
+            "root": "",
             "fonts": "fonts",
-            "styles": "styles"
-        }
+            "sprites": "sprites",
+            "icons": "icons",
+            "styles": "styles",
+            "pmtiles": "data"
+        },
+        "serveAllFonts": true,
+        "serveAllStyles": true,
+        "serveStaticMaps": true,
+        "allowRemoteMarkerIcons": true,
+        "allowInlineMarkerImages": true,
+        "staticAttributionText": "© OpenMapTiles  © OpenStreetMaps"
     },
     "styles": {
         "default": {
-            "style": "yellow/style.json",
+            "style": "default.json",
             "tilejson": {
                 "type": "overlay",
                 "bounds": [
-                    8.44806,
-                    47.32023,
-                    8.62537,
-                    47.43468
+                    -10.0,
+                    -36.5,
+                    -5.5,
+                    42.5
                 ]
             }
         }
     },
     "data": {
-        "default": {
+        "portugal-vector": {
             "pmtiles": "latest.pmtiles"
         }
     }

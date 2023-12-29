@@ -6,7 +6,7 @@
             "sprites": "sprites",
             "icons": "icons",
             "styles": "styles",
-            "pmtiles": "data"
+            "pmtiles": "tiles"
         },
         "serveAllFonts": true,
         "serveAllStyles": true,

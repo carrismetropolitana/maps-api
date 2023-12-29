@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # DIRECTORY
-directory="/data"
+directory="/data/tiles"
 
 # FREQUENCY
 frequency=21600 # Run every 6 hours (21600 seconds)
@@ -12,6 +12,9 @@ portugal_bbox="-10.0,-36.5,-5.5,42.5"
 
 # Infinite loop
 while true; do
+
+    # Cleanup old files
+    rm $directory/next.pmtiles
 
     # Build the date string for yesterday
     yesterday_date_string=$(date -d "yesterday 13:00" '+%Y%m%d')

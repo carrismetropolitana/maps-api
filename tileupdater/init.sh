@@ -14,7 +14,7 @@ portugal_bbox="-10.0,-36.5,-5.5,42.5"
 while true; do
 
     # Build the date string for yesterday
-    yesterday_date_string=$(date -d "yesterday 13:00" '+%Y-%m-%d')
+    yesterday_date_string=$(date -d "yesterday 13:00" '+%Y%m%d')
 
     # Extract Portugal from the larger dataset
     ./pmtiles extract https://build.protomaps.com/$yesterday_date_string.pmtiles /data/next.pmtiles --bbox=-$portugal_bbox
